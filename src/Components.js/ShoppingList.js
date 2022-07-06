@@ -8,7 +8,9 @@ function ShoppingList() {
   };
   return (
     <>
-      <button onClick={handleSetShowList}>Show list</button>
+      <div>
+        <button onClick={handleSetShowList}>Show list</button>
+      </div>
       {showList && (
         <>
           <div>ShoppingList</div>

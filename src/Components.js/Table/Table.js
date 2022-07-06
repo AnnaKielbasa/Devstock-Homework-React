@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import tableData from "./mock.json";
 import { nanoid } from "nanoid";
+
 function Table() {
   // UseState 6
   const [contacts, setContacts] = useState(tableData);
-  const [addFormData, setAddFormData] = useState({
+  const addFormData = {
     fullName: "",
     address: "",
     phoneNumber: "",
     email: "",
-  });
-  const newFormData = { ...addFormData };
+  };
 
   const handleAddFormChange = (event) => {
     event.preventDefault();
@@ -23,7 +23,6 @@ function Table() {
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
     const newContact = {
-      id: nanoid(),
       fullName: addFormData.fullName,
       address: addFormData.address,
       phoneNumber: addFormData.phoneNumber,
@@ -31,6 +30,7 @@ function Table() {
     };
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
+    event.target.reset();
   };
   return (
     <>
@@ -38,7 +38,6 @@ function Table() {
       <table>
         <thead>
           <tr>
-            {/* <th>ID</th> */}
             <th>Name</th>
             <th>Adress</th>
             <th>Phone Number</th>
@@ -47,8 +46,7 @@ function Table() {
         </thead>
         <tbody>
           {contacts.map(({ id, fullName, address, phoneNumber, email }) => (
-            <tr key={id}>
-              {/* <td>{contact.id}</td> */}
+            <tr key={nanoid()}>
               <td key={fullName}>{fullName}</td>
               <td key={address}>{address}</td>
               <td key={phoneNumber}>{phoneNumber}</td>
