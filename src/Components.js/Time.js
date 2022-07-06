@@ -14,7 +14,7 @@ export default function CurrentTime() {
 
   return (
     <>
-      <p>Current time: {time.toUTCString()}</p>
+      <p>Current time: {time.toLocaleString({ timeZone: "Europe/Warsaw" })}</p>
     </>
   );
 }

@@ -1,15 +1,12 @@
 import { useState } from "react";
-
+//useState 3
 export default function Disabled() {
   const [name, setName] = useState(true);
 
-  const handleSetName = () => {
-    setName((prev) => !prev);
-  };
   return (
     <div>
-      <button>{name ? "true" : "false"}</button>
-      <button onClick={handleSetName}>
+      <button disabled={name}>Disabled: {name.toString()}</button>
+      <button onClick={() => setName((prev) => !prev)}>
         Change state of the button on the left
       </button>
     </div>

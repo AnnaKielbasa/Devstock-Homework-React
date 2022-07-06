@@ -14,7 +14,7 @@ function ShoppingList() {
           <div>ShoppingList</div>
           <ul>
             {shoppingList.map((value) => (
-              <li>{value}</li>
+              <li key={value}>{value}</li>
             ))}
           </ul>
         </>

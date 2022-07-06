@@ -4,10 +4,6 @@ export default function Input() {
   const [inputValue, setInputValue] = useState("");
   const [showValue, setShowValue] = useState(false);
 
-  const handleInput = () => {
-    setShowValue(true);
-  };
-
   return (
     <div>
       {showValue && <div>{inputValue}</div>}
@@ -15,7 +11,13 @@ export default function Input() {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
-      <button onClick={handleInput}>Show input value as a header</button>
+      <button
+        onClick={() => {
+          setShowValue(true);
+        }}
+      >
+        Show input value as a header
+      </button>
     </div>
   );
 }

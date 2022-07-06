@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function ButtonInput() {
-  // UseEffect 1
-  useEffect(() => {
-    alert("Cześć");
-  },[]);
   // UseState 8
   const [inputValue, setInputValue] = useState([]);
-  const [addToList, setAddToList] = useState([]);
+  const [addToList, setAddToList] = useState();
 
-  const handleSetAddToList = (event) => {
-    event.preventDefault();
-    setAddToList(event.target.value);
-  };
-  const handleButtonClick = (event) => {
-    event.preventDefault();
+  const handleButtonClick = () => {
     setInputValue((prevState) => [...prevState, addToList]);
     setAddToList([]);
   };
   return (
     <>
-      <input type="text" onChange={handleSetAddToList} />
+      <input type="text" onChange={(e) => setAddToList(e.target.value)} />
       <button onClick={handleButtonClick} type="submit">
         Add to list
       </button>

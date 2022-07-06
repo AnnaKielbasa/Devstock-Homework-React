@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import "./App.css";
 import Menu from "./Components.js/Menu";
 import Button from "./Components.js/Button";
@@ -11,18 +13,32 @@ import CurrentTime from "./Components.js/Time";
 import Counter from "./Components.js/Counter";
 
 function App() {
+  // UseEffect 1:
+  useEffect(() => {
+    alert("Cześć");
+  }, []);
   return (
     <>
+      {/* nadawanie właścwości komponentom funkcyjnym  4,5,6 */}
       <Menu />
-      <ButtonInput />
+
       <Button text="Anuluj" />
+      {/* UseState 1,2: */}
       <SayHello />
+      {/* UseState 3: */}
       <Disabled />
+      {/* UseState 4: */}
       <Input />
+      {/* UseState 6: */}
       <Table />
+      {/* UseState 7: */}
       <ShoppingList />
+      {/* UseState 8: */}
+      <ButtonInput />
+      {/* UseEffect 4: */}
       <CurrentTime />
-      <Counter/>
+      {/* UseEffect 5: */}
+      <Counter />
     </>
   );
 }

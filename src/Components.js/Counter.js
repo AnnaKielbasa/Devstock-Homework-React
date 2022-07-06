@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+// UseEffect 5
 const list = [
   "butter",
   "egg",
@@ -27,7 +28,7 @@ function Counter() {
 
       <ol>
         {showList.map((item) => (
-          <li>{item}</li>
+          <li key={item}>{item}</li>
         ))}
       </ol>
     </div>
