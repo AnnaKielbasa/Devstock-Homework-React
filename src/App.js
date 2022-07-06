@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Menu from "./Components.js/Menu";
+import Button from "./Components.js/Button";
+import SayHello from "./Components.js/SayHello";
+import Disabled from "./Components.js/Disabled";
+import Input from "./Components.js/Input";
+import Table from "./Components.js/Table/Table";
+import ShoppingList from "./Components.js/ShoppingList";
+import ButtonInput from "./Components.js/ButtonInput";
+import CurrentTime from "./Components.js/Time";
+import Counter from "./Components.js/Counter";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menu />
+      <ButtonInput />
+      <Button text="Anuluj" />
+      <SayHello />
+      <Disabled />
+      <Input />
+      <Table />
+      <ShoppingList />
+      <CurrentTime />
+      <Counter/>
+    </>
   );
 }
 
